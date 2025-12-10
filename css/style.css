@@ -38,10 +38,17 @@ body {
 .title-gold { color: #d4af37; border-color: #d4af37; }
 .title-silver { color: #a8a9ad; border-color: #a8a9ad; }
 
-/* --- PREMIUM BANNER ALANI --- */
+/* --- PREMIUM BANNER ALANI (GÜNCEL) --- */
+.premium-wrapper {
+    width: 100%;
+    height: 400px; /* Toplam yükseklik sabit */
+    display: flex;
+    flex-direction: column; /* Alt alta sırala */
+}
+
 .premium-banner {
     width: 100%;
-    height: 400px;
+    height: 50%; /* Yarı yarıya paylaş */
     position: relative;
     overflow: hidden;
     display: flex;
@@ -49,6 +56,7 @@ body {
     justify-content: center;
     color: white;
     text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.3); /* Aralarına çizgi */
 }
 
 .premium-bg {
@@ -59,30 +67,42 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    filter: brightness(0.6);
+    filter: brightness(0.5); /* Biraz daha karanlık yapalım yazı okunsun */
 }
 
 .premium-content {
     position: relative;
     z-index: 2;
-    padding: 20px;
+    padding: 10px;
 }
 
 .premium-badge {
     background-color: #ff0055;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.75rem; /* Rozet küçüldü */
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     display: inline-block;
 }
 
 .premium-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 1.8rem; /* Başlık küçüldü */
+    margin-bottom: 8px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Küçük Buton Ayarı */
+.btn-small {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+/* Mobilde yükseklik ayarı */
+@media (max-width: 768px) {
+    .premium-wrapper { height: 350px; } /* Mobilde biraz kısabiliriz */
+    .premium-content h1 { font-size: 1.4rem; }
 }
 
 /* --- İLAN KARTLARI --- */

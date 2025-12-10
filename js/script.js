@@ -65,11 +65,20 @@ function createAdCard(title, seed) {
  */
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. Premium Banner Linkini Ayarla
-    const randomPremiumId = "PRM-" + Math.floor(Math.random() * 9000 + 1000); 
-    const premiumBtn = document.getElementById('premium-btn');
-    if(premiumBtn) {
-        premiumBtn.href = createWaLink(randomPremiumId);
+// 1. Premium Banner Linklerini Ayarla (2 adet)
+    const premiumBtn1 = document.getElementById('premium-btn-1');
+    const premiumBtn2 = document.getElementById('premium-btn-2');
+    
+    // Üst Banner Linki
+    if(premiumBtn1) {
+        const id1 = "PRM-UST-" + Math.floor(Math.random() * 1000);
+        premiumBtn1.href = createWaLink(id1);
+    }
+
+    // Alt Banner Linki
+    if(premiumBtn2) {
+        const id2 = "PRM-ALT-" + Math.floor(Math.random() * 1000);
+        premiumBtn2.href = createWaLink(id2);
     }
 
     // 2. İlanları Doldur (Platinum)
