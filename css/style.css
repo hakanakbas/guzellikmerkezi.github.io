@@ -1,0 +1,193 @@
+/* --- RESET & TEMEL AYARLAR --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* --- GENEL CONTAINER --- */
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 0 50px 0;
+}
+
+/* --- KATEGORİ BAŞLIKLARI --- */
+.category-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 30px 0 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px;
+    background: #fff;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Renk Kodları */
+.title-platinum { color: #5a5a5a; border-color: #5a5a5a; }
+.title-gold { color: #d4af37; border-color: #d4af37; }
+.title-silver { color: #a8a9ad; border-color: #a8a9ad; }
+
+/* --- PREMIUM BANNER ALANI --- */
+.premium-banner {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.premium-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(0.6);
+}
+
+.premium-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.premium-badge {
+    background-color: #ff0055;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.premium-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* --- İLAN KARTLARI --- */
+.ad-row {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background: #000;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Kayar Arka Plan */
+.slider-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    width: 200%;
+}
+
+.slider-wrapper img {
+    width: 25%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Overlay */
+.ad-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    text-align: center;
+    color: #fff;
+    padding: 15px;
+    transition: background 0.3s;
+}
+
+.ad-row:hover .ad-overlay {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.ad-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+/* WhatsApp Butonu */
+.whatsapp-btn {
+    background-color: #25D366;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.05);
+    background-color: #20bd5a;
+}
+
+/* --- ANİMASYONLAR --- */
+@keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollRight {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+.ad-row:nth-child(odd) .slider-wrapper {
+    animation: scrollLeft 20s linear infinite;
+}
+
+.ad-row:nth-child(even) .slider-wrapper {
+    animation: scrollRight 20s linear infinite;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .premium-banner { height: 300px; }
+    .premium-content h1 { font-size: 1.8rem; }
+    .ad-row { height: 200px; }
+    .ad-title { font-size: 1.4rem; }
+}
